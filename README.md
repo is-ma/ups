@@ -35,8 +35,6 @@ crontab -e
 * * * * * /home/deploy/.ufw_police/ufw_police.sh
   ```
 
-### Monitoring on your smartphone with Tasker
-
 You can use Tasker to watch the last 10 lines of the every_minute_plus.log file every minute.
 
   ```sh
