@@ -3,7 +3,7 @@
 # read configuration file
 source /home/deploy/.ufw_police/config.sh
 
-# populate report.log && IP bags
+# populate logs/report.log && IP bags
 $UFW_POLICE_PATH/mods/report.sh
 
 # aggressive black IPs must be banned!
