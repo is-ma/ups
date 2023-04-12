@@ -30,7 +30,7 @@ touch ~/.ufw_police/logs/daily_unique_ips_report.log
 Then add these rules to your "crontab -e":
 
 ```sh
-### UFW_POLICE ###
+### UFW_POLICE: tic toc tic toc ###
 * * * * * /home/deploy/.ufw_police/every_minute.sh
 59 23 * * * /home/deploy/.ufw_police/once_a_day.sh
 ```
@@ -55,7 +55,7 @@ Note: Example before will notify when hits/min greater or equal than 200.
 Add these lines to your ´~/.bashrc´:
 
 ```sh
-### UFW_POLICE ###
+### UFW_POLICE: shell tools ###
 ~/.ufw_police/bash_welcome_report.sh
 alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.ufw_police/mods/realtraffic.awk"
 ```
