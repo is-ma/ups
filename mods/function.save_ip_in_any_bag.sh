@@ -5,10 +5,10 @@ save_ip_in_any_bag () {
   ip=$1
 
   # if IP is already in ANY bag, exit now
-  if grep -q $ip $UFW_POLICE_PATH/logs/whitelist.log; then
+  if grep -q "^$ip " $UFW_POLICE_PATH/logs/whitelist.log; then
     return 0
   fi
-  if grep -q $ip $UFW_POLICE_PATH/logs/blacklist.log; then
+  if grep -q "^$ip$" $UFW_POLICE_PATH/logs/blacklist.log; then
     return 0
   fi
 
