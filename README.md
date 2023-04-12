@@ -12,37 +12,29 @@ It is pre-configured to work with NGINX access log. And the banning is through U
 
 ### Installation
 
-This is an example of how to list things you need to use the software and how to install them.
-  ```sh
+```sh
 git clone https://github.com/is-ma/ufw_police.git ~/.ufw_police
-  ```
+```
 
 Create the log files:
 
-  ```sh
+```sh
 touch ~/.ufw_police/logs/report.log
 touch ~/.ufw_police/logs/report_plus.log
 touch ~/.ufw_police/logs/ip_blacklist.log
 touch ~/.ufw_police/logs/ip_whitelist.log
-  ```
+```
   
-Then add rule to your "crontab -e" to execute the script every single minute.
+Then add these rules to your "crontab -e":
 
-  ```sh
-crontab -e
-  
-# show how many requests I've received the last minute
-* * * * * /home/deploy/.ufw_police/ufw_police.sh
-  ```
+```sh
+### UFW_POLICE ###
+* * * * * /home/deploy/.ufw_police/every_minute.sh
+59 23 * * * /home/deploy/.ufw_police/once_a_day.sh
+```
 
-You can use Tasker to watch the last 10 lines of the report_plus.log file every minute.
 
-  ```sh
-crontab -e
-
-# show stats on Tasker (mobile device)
-* * * * * tail /home/deploy/.ufw_police/logs/report_plus.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > /home/YOUR_USER/YOUR_WEB_FOLDER/.../public/lastminuteplus.txt
-  ```
+### Tasker
 
 In Tasker repeat every minute:
 
@@ -50,8 +42,12 @@ In Tasker repeat every minute:
 2) Notify %http_data
 3) Music Play (if %http_data ~R ^..:.. [2-9][0-9][0-9]
 
+
+### Shell Tools
+
 - Add a beautiful welcome report in ~/.bashrc
 - Add an 'r' alias to show real web traffic
+
 ```sh
 ### UFW_POLICE ###
 ~/.ufw_police/bash_welcome_report.sh
