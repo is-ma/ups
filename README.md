@@ -49,3 +49,9 @@ In Tasker repeat every minute:
 1) HTTP Request (method GET)
 2) Notify %http_data
 3) Music Play (if %http_data ~R ^..:.. [2-9][0-9][0-9]
+
+Add a beautiful welcome report in ~/.bashrc
+```sh
+# UFW_POLICE: show report as a welcome
+~/.ufw_police/bash_welcome_report.sh
+```
