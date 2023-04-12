@@ -24,6 +24,7 @@ save_ip_in_any_bag () {
   crawler_dns+=("yandex.net.")
   crawler_dns+=("yandex.com.")
   crawler_dns+=("dataforseo.com.")
+  crawler_dns+=("googleusercontent.com.")
 
   # let's find if the IP is a legal crawler
   dns_lookup=$(host $ip)
