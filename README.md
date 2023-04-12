@@ -23,8 +23,8 @@ touch ~/.ufw_police/logs/report.log
 touch ~/.ufw_police/logs/report_plus.log
 touch ~/.ufw_police/logs/blacklist.log
 touch ~/.ufw_police/logs/whitelist.log
-touch ~/.ufw_police/banned_ips.log
-touch ~/.ufw_police/bdaily_unique_ips_report.log
+touch ~/.ufw_police/logs/banned_ips.log
+touch ~/.ufw_police/logs/daily_unique_ips_report.log
 ```
   
 Then add these rules to your "crontab -e":
