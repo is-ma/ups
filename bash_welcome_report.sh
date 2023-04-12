@@ -5,8 +5,8 @@ source /home/deploy/.ufw_police/config.sh
 
 # show complete daily report (daily unique IPs count)
 echo ""
-echo "cat $UFW_POLICE_PATH/logs/daily_unique_ips_report.txt"
-cat $UFW_POLICE_PATH/logs/daily_unique_ips_report.txt
+echo "cat $UFW_POLICE_PATH/logs/daily_unique_ips_report.log"
+cat $UFW_POLICE_PATH/logs/daily_unique_ips_report.log
 
 # and also TODAY unique IPs (using same code we use in once_a_day.sh)
 echo "Today unique IPs (until now)"
