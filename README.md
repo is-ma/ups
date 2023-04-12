@@ -50,8 +50,10 @@ In Tasker repeat every minute:
 2) Notify %http_data
 3) Music Play (if %http_data ~R ^..:.. [2-9][0-9][0-9]
 
-Add a beautiful welcome report in ~/.bashrc
+- Add a beautiful welcome report in ~/.bashrc
+- Add an 'r' alias to show real web traffic
 ```sh
-# UFW_POLICE: show report as a welcome
+### UFW_POLICE ###
 ~/.ufw_police/bash_welcome_report.sh
+alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.ufw_police/mods/realtraffic.awk"
 ```
