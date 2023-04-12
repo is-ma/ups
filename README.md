@@ -21,7 +21,7 @@ Create the log files:
 ```sh
 touch ~/.ufw_police/logs/report.log
 touch ~/.ufw_police/logs/report_plus.log
-touch ~/.ufw_police/logs/ip_blacklist.log
+touch ~/.ufw_police/logs/blacklist.log
 touch ~/.ufw_police/logs/whitelist.log
 ```
   

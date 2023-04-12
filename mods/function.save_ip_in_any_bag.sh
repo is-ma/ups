@@ -8,7 +8,7 @@ save_ip_in_any_bag () {
   if grep -q $ip $UFW_POLICE_PATH/logs/whitelist.log; then
     return 0
   fi
-  if grep -q $ip $UFW_POLICE_PATH/logs/ip_blacklist.log; then
+  if grep -q $ip $UFW_POLICE_PATH/logs/blacklist.log; then
     return 0
   fi
 
@@ -38,7 +38,7 @@ save_ip_in_any_bag () {
   done
   # still black? well, let's put that IP in the black list
   if [[ $ip_status == "black" ]]; then 
-    echo "$ip" >> $UFW_POLICE_PATH/logs/ip_blacklist.log
+    echo "$ip" >> $UFW_POLICE_PATH/logs/blacklist.log
   fi
 
   # useful to debug
