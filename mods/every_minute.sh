@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # intro
-# - generates logs/every_minute.log
+# - generates logs/report.log
 # - populates IP white and black bags
 
 # include
@@ -23,4 +23,4 @@ ip_hits=$(cat /tmp/top_ip_hits.txt | awk '{print $1}')
 save_ip_in_any_bag $ip_address
 
 # let's log!
-echo "$today $hour_min $hits $ip_hits $ip_address" >> $UFW_POLICE_PATH/logs/every_minute.log
+echo "$today $hour_min $hits $ip_hits $ip_address" >> $UFW_POLICE_PATH/logs/report.log

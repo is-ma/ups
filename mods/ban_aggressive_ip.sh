@@ -4,9 +4,9 @@
 # - this module will ban aggressive (many hits) black IPs
 
 # get last minute number of hits and the IP address
-hits=$(tail -n1 $UFW_POLICE_PATH/logs/every_minute.log | cut -d' ' -f4)
-ip=$(tail -n1 $UFW_POLICE_PATH/logs/every_minute.log | cut -d' ' -f5)
-now=$(tail -n1 $UFW_POLICE_PATH/logs/every_minute.log | cut -c -14)
+hits=$(tail -n1 $UFW_POLICE_PATH/logs/report.log | cut -d' ' -f4)
+ip=$(tail -n1 $UFW_POLICE_PATH/logs/report.log | cut -d' ' -f5)
+now=$(tail -n1 $UFW_POLICE_PATH/logs/report.log | cut -c -14)
 
 # if the IP is in ip_blacklist.log 
 if grep -q $ip $UFW_POLICE_PATH/logs/ip_blacklist.log; then

@@ -20,8 +20,8 @@ git clone https://github.com/is-ma/ufw_police.git ~/.ufw_police
 Create the log files:
 
   ```sh
-touch ~/.ufw_police/logs/every_minute.log
-touch ~/.ufw_police/logs/every_minute_plus.log
+touch ~/.ufw_police/logs/report.log
+touch ~/.ufw_police/logs/report_plus.log
 touch ~/.ufw_police/logs/ip_blacklist.log
 touch ~/.ufw_police/logs/ip_whitelist.log
   ```
@@ -35,13 +35,13 @@ crontab -e
 * * * * * /home/deploy/.ufw_police/ufw_police.sh
   ```
 
-You can use Tasker to watch the last 10 lines of the every_minute_plus.log file every minute.
+You can use Tasker to watch the last 10 lines of the report_plus.log file every minute.
 
   ```sh
 crontab -e
 
 # show stats on Tasker (mobile device)
-* * * * * tail /home/deploy/.ufw_police/logs/every_minute_plus.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > /home/YOUR_USER/YOUR_WEB_FOLDER/.../public/lastminuteplus.txt
+* * * * * tail /home/deploy/.ufw_police/logs/report_plus.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > /home/YOUR_USER/YOUR_WEB_FOLDER/.../public/lastminuteplus.txt
   ```
 
 In Tasker repeat every minute:
