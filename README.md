@@ -1,11 +1,11 @@
 <!-- GETTING STARTED -->
 ## UFW Police
 
-This is a small script that keep abusive, impostor crawlers away from my servers.
+This is a script that keep abusive, impostor crawlers away from my servers.
 
 It uses DNS lookup tool determine if the IP is a legal crawler or not.
 
-UFW Police only ban IPs when traffic is very heavy and there is an abusive IP crawling a site.
+UFW Police only ban IPs when traffic from certain IP is very heavy (configurable) and is not a legal crawler. 
 
 It is pre-configured to work with NGINX access log. And the banning is through UFW. 
 
@@ -42,11 +42,15 @@ In Tasker repeat every minute:
 2) Notify %http_data
 3) Music Play (if %http_data ~R ^..:.. [2-9][0-9][0-9]
 
+Note: Example before will notify when hits/min greater or equal than 200.
+
 
 ### Shell Tools
 
-- Add a beautiful welcome report in ~/.bashrc
+- Add welcome report every time you log in 
 - Add an 'r' alias to show real web traffic
+
+Add these lines to your ´~/.bashrc´:
 
 ```sh
 ### UFW_POLICE ###
