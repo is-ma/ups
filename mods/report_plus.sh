@@ -11,10 +11,10 @@ last_log=$(tail -n1 $UFW_POLICE_PATH/logs/report.log)
 ip=$(echo $last_log | awk '{print $5}')
 
 # now get the $ip_plus (example: 52.167.144.69 msn.com.) and
-# if not found an IP on ip_whitelist.log, at least will be $ip
+# if not found an IP on whitelist.log, at least will be $ip
 ip_plus=$ip
-if grep -q "^$ip " $UFW_POLICE_PATH/logs/ip_whitelist.log; then
-  ip_plus=$(grep "^$ip " $UFW_POLICE_PATH/logs/ip_whitelist.log)
+if grep -q "^$ip " $UFW_POLICE_PATH/logs/whitelist.log; then
+  ip_plus=$(grep "^$ip " $UFW_POLICE_PATH/logs/whitelist.log)
 fi
 
 # let's replace $ip with $ip_plus, delete last (.) and log!

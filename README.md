@@ -22,7 +22,7 @@ Create the log files:
 touch ~/.ufw_police/logs/report.log
 touch ~/.ufw_police/logs/report_plus.log
 touch ~/.ufw_police/logs/ip_blacklist.log
-touch ~/.ufw_police/logs/ip_whitelist.log
+touch ~/.ufw_police/logs/whitelist.log
 ```
   
 Then add these rules to your "crontab -e":

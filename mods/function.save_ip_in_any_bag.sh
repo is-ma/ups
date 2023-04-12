@@ -5,7 +5,7 @@ save_ip_in_any_bag () {
   ip=$1
 
   # if IP is already in ANY bag, exit now
-  if grep -q $ip $UFW_POLICE_PATH/logs/ip_whitelist.log; then 
+  if grep -q $ip $UFW_POLICE_PATH/logs/whitelist.log; then
     return 0
   fi
   if grep -q $ip $UFW_POLICE_PATH/logs/ip_blacklist.log; then
@@ -33,7 +33,7 @@ save_ip_in_any_bag () {
   for (( i=0; i < ${#crawler_dns[@]}; i++ )) do
     if [[ $dns_lookup == *"${crawler_dns[i]}"* ]]; then 
       ip_status=white
-      echo "$ip ${crawler_dns[i]}" >> $UFW_POLICE_PATH/logs/ip_whitelist.log
+      echo "$ip ${crawler_dns[i]}" >> $UFW_POLICE_PATH/logs/whitelist.log
     fi
   done
   # still black? well, let's put that IP in the black list
