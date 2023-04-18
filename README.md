@@ -50,7 +50,8 @@ Note: Example before will notify when hits/min greater or equal than 200.
 ### Shell Tools
 
 - Add welcome report every time you log in 
-- Add an 'r' alias to show real web traffic
+- Add an 'r' alias to show real time web traffic
+- Add an 'm' alias to show min by min web traffic
 
 Add these lines to your ´~/.bashrc´:
 
@@ -58,4 +59,5 @@ Add these lines to your ´~/.bashrc´:
 ### UFW_POLICE: shell tools ###
 ~/.ufw_police/bash_welcome_report.sh
 alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.ufw_police/mods/realtraffic.awk"
+alias m="tailf ~/.ufw_police/logs/report_plus.log"
 ```
