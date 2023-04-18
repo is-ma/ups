@@ -21,3 +21,7 @@ echo "Banned IPs (from $UFW_POLICE_PATH/logs/banned_ips.log):"
 cat $UFW_POLICE_PATH/logs/banned_ips.log
 
 echo ""
+echo 'df -h | grep -E "Use%|vda1"'
+df -h | grep -Ee "Use%|vda1"
+
+echo ""
