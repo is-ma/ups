@@ -17,8 +17,10 @@ else if ($0 ~ /criteo\.com/)           # verified Bing partner
   print "  ", $9, $3, "Crit", $7
 else if ($0 ~ /apple\.com/)            # inoffensive
   print "  ", $9, $3, "Appl", $7
-else if ($0 ~ /uptimerobot\.com/)      # guardian
+else if ($0 ~ /uptimerobot\.com/)      # guardian app
   print "  ", $9, $3, "Upti", $7
+else if ($0 ~ /Tasker/)                # android info min by min
+  print "  ", $9, $3, "Tskr", $7
 else{ 
   print ""
   print $0
