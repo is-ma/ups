@@ -3,14 +3,14 @@
 # read configuration file
 source /home/deploy/.is-ma/ups/config.sh
 
-# populate logs/report.log && IP bags
-$UFW_POLICE_PATH/mods/report.sh
+# populate logs/raw_minutero.log && IP bags
+$IS_MA__UPS_PATH/mods/raw_minutero.sh
 
 # aggressive black IPs must be banned!
-$UFW_POLICE_PATH/mods/ban_aggressive_ip.sh
+$IS_MA__UPS_PATH/mods/ban_aggressive_ip.sh
 
 # improve the log to a better looking one
-$UFW_POLICE_PATH/mods/report_plus.sh
+$IS_MA__UPS_PATH/mods/minutero.sh
 
 # show stats on Tasker (mobile device)
-tail $UFW_POLICE_PATH/logs/report_plus.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > $PUBLIC_TXT_FOR_TASKER
+tail $IS_MA__UPS_PATH/logs/minutero.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > $IS_MA__PUBLIC_TXT_FOR_TASKER

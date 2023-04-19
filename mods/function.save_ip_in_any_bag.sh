@@ -5,10 +5,10 @@ save_ip_in_any_bag () {
   ip=$1
 
   # if IP is already in ANY bag, exit now
-  if grep -q "^$ip " $UFW_POLICE_PATH/logs/whitelist.log; then
+  if grep -q "^$ip " $IS_MA__UPS_PATH/logs/whitelist.log; then
     return 0
   fi
-  if grep -q "^$ip$" $UFW_POLICE_PATH/logs/blacklist.log; then
+  if grep -q "^$ip$" $IS_MA__UPS_PATH/logs/blacklist.log; then
     return 0
   fi
 
@@ -34,12 +34,12 @@ save_ip_in_any_bag () {
   for (( i=0; i < ${#crawler_dns[@]}; i++ )) do
     if [[ $dns_lookup == *"${crawler_dns[i]}"* ]]; then 
       ip_status=white
-      echo "$ip ${crawler_dns[i]}" >> $UFW_POLICE_PATH/logs/whitelist.log
+      echo "$ip ${crawler_dns[i]}" >> $IS_MA__UPS_PATH/logs/whitelist.log
     fi
   done
   # still black? well, let's put that IP in the black list
   if [[ $ip_status == "black" ]]; then 
-    echo "$ip" >> $UFW_POLICE_PATH/logs/blacklist.log
+    echo "$ip" >> $IS_MA__UPS_PATH/logs/blacklist.log
   fi
 
   # useful to debug

@@ -19,18 +19,18 @@ git clone https://github.com/is-ma/ups.git ~/.is-ma/ups
 Create the log files:
 
 ```sh
-touch ~/.is-ma/ups/logs/report.log
-touch ~/.is-ma/ups/logs/report_plus.log
+touch ~/.is-ma/ups/logs/raw_minutero.log
+touch ~/.is-ma/ups/logs/minutero.log
 touch ~/.is-ma/ups/logs/blacklist.log
 touch ~/.is-ma/ups/logs/whitelist.log
 touch ~/.is-ma/ups/logs/banned_ips.log
-touch ~/.is-ma/ups/logs/daily_unique_ips_report.log
+touch ~/.is-ma/ups/logs/daily.log
 ```
   
 Then add these rules to your "crontab -e":
 
 ```sh
-### UFW_POLICE: tic toc tic toc ###
+### UPS: tic toc tic toc ###
 * * * * * /home/deploy/.is-ma/ups/every_minute.sh
 59 23 * * * /home/deploy/.is-ma/ups/once_a_day.sh
 ```
@@ -56,8 +56,8 @@ Note: Example before will notify when hits/min greater or equal than 200.
 Add these lines to your ´~/.bashrc´:
 
 ```sh
-### UFW_POLICE: shell tools ###
-~/.is-ma/ups/bash_welcome_report.sh
+### UFW POLICE & STATS (UPS) ###
+source ~/.is-ma/ups/bash_welcome.sh
 alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.is-ma/ups/mods/realtraffic.awk"
-alias m="tail -n60 ~/.is-ma/ups/logs/report_plus.log"
+alias m="tail -n60 ~/.is-ma/ups/logs/minutero.log"
 ```
