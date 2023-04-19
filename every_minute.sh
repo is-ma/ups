@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # read configuration file
-source /home/deploy/.ufw_police/config.sh
+source /home/deploy/.is-ma/ups/config.sh
 
 # populate logs/report.log && IP bags
 $UFW_POLICE_PATH/mods/report.sh

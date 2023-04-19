@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # read configuration file
-source /home/deploy/.ufw_police/config.sh
+source /home/deploy/.is-ma/ups/config.sh
 
 # show complete daily report (daily unique IPs count)
 echo ""

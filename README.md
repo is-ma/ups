@@ -1,5 +1,5 @@
 <!-- GETTING STARTED -->
-## UFW Police
+## UFW Police and Stats (UPS)
 
 This is a script that keep abusive, impostor crawlers away from my servers.
 
@@ -13,26 +13,26 @@ It is pre-configured to work with NGINX access log. And the banning is through U
 ### Installation
 
 ```sh
-git clone https://github.com/is-ma/ufw_police.git ~/.ufw_police
+git clone https://github.com/is-ma/ups.git ~/.is-ma/ups
 ```
 
 Create the log files:
 
 ```sh
-touch ~/.ufw_police/logs/report.log
-touch ~/.ufw_police/logs/report_plus.log
-touch ~/.ufw_police/logs/blacklist.log
-touch ~/.ufw_police/logs/whitelist.log
-touch ~/.ufw_police/logs/banned_ips.log
-touch ~/.ufw_police/logs/daily_unique_ips_report.log
+touch ~/.is-ma/ups/logs/report.log
+touch ~/.is-ma/ups/logs/report_plus.log
+touch ~/.is-ma/ups/logs/blacklist.log
+touch ~/.is-ma/ups/logs/whitelist.log
+touch ~/.is-ma/ups/logs/banned_ips.log
+touch ~/.is-ma/ups/logs/daily_unique_ips_report.log
 ```
   
 Then add these rules to your "crontab -e":
 
 ```sh
 ### UFW_POLICE: tic toc tic toc ###
-* * * * * /home/deploy/.ufw_police/every_minute.sh
-59 23 * * * /home/deploy/.ufw_police/once_a_day.sh
+* * * * * /home/deploy/.is-ma/ups/every_minute.sh
+59 23 * * * /home/deploy/.is-ma/ups/once_a_day.sh
 ```
 
 
@@ -57,7 +57,7 @@ Add these lines to your ´~/.bashrc´:
 
 ```sh
 ### UFW_POLICE: shell tools ###
-~/.ufw_police/bash_welcome_report.sh
-alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.ufw_police/mods/realtraffic.awk"
-alias m="tail -n60 ~/.ufw_police/logs/report_plus.log"
+~/.is-ma/ups/bash_welcome_report.sh
+alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.is-ma/ups/mods/realtraffic.awk"
+alias m="tail -n60 ~/.is-ma/ups/logs/report_plus.log"
 ```
