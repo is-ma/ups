@@ -20,5 +20,10 @@ fi
 # let's replace $ip with $ip_plus, delete last (.) and log!
 new_log=$(echo $last_log | sed "s/$ip/$ip_plus/")
 new_log=$(echo $new_log | sed 's/\.$//')
-echo $new_log >> $UFW_POLICE_PATH/logs/report_plus.log
-
+echo $new_log | \
+  awk '{
+   if( $NF == 5 )
+     printf "%s %s %4d %4d  %s\n",$1,$2,$3,$4,$5;
+   else
+     printf "%s %s %4d %4d  %s %s\n",$1,$2,$3,$4,$5,$6;
+  }' >> $UFW_POLICE_PATH/logs/report_plus.log
