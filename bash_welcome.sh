@@ -12,7 +12,11 @@ tail $IS_MA__UPS_PATH/logs/daily.log
 
 # and also TODAY unique IPs (using same code we use in once_a_day.sh)
 echo "Today (until now)"
-sudo cat $IS_MA__WEBLOG_PATH | cut -d: -f1 | sort -nu | cut -d[ -f2 | sort | uniq --count | sort -r
+hits=$(sudo cat $IS_MA__WEBLOG_PATH | wc -l)
+uniq_ip_count=$(sudo cat $IS_MA__WEBLOG_PATH | awk '{print $8}' | sort -nu | wc -l)
+today=$(date '+%d/%b/%Y')
+abbrev_day=$(date '+%a')
+printf "%8d %6d %s %s\n" $hits $uniq_ip_count $today $abbrev_day
 
 echo ""
 echo "Today top IP hits/min (from $IS_MA__UPS_PATH/logs/minutero.log):"

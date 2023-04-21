@@ -12,7 +12,7 @@ save_ip_in_any_bag () {
     return 0
   fi
 
-  # legal crawler list
+  # legal crawlers for whitelist
   crawler_dns=()
   crawler_dns+=("baidu.com.")
   crawler_dns+=("baidu.jp.")
@@ -24,7 +24,6 @@ save_ip_in_any_bag () {
   crawler_dns+=("yandex.net.")
   crawler_dns+=("yandex.com.")
   crawler_dns+=("googleusercontent.com.")
-# crawler_dns+=("dataforseo.com.")  # We crawl the whole web for collecting the data for our Backlinks database which is really helpful for SEO.
 
   # let's find if the IP is a legal crawler
   dns_lookup=$(host $ip)

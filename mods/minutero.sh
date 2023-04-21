@@ -23,7 +23,7 @@ new_log=$(echo $new_log | sed 's/\.$//')
 echo $new_log | \
   awk '{
    if( $NF == 5 )
-     printf "%s %s %4d %4d  %s\n",$1,$2,$3,$4,$5;
+     printf "%s %s %5d %4d  %s\n",$1,$2,$3,$4,$5;
    else
-     printf "%s %s %4d %4d  %s %s\n",$1,$2,$3,$4,$5,$6;
+     printf "%s %s %5d %4d  %s %s\n",$1,$2,$3,$4,$5,$6;
   }' >> $IS_MA__UPS_PATH/logs/minutero.log

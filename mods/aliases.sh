@@ -10,8 +10,8 @@ echo "  sas: Search /var/log/access.log (regexp) and then make it small."
 echo ""
 
 # define aliases
-alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.is-ma/ups/mods/realtraffic.awk"
+alias r="sudo tailf /var/log/nginx/ups_access.log | awk -f ~/.is-ma/ups/mods/realtraffic.awk"
 alias m="tail -n60 ~/.is-ma/ups/logs/minutero.log"
-alias sa="sudo cat /var/log/nginx/access.log | egrep -i"
-function sas () { sudo cat /var/log/nginx/access.log | egrep -i "$1" | awk -f ~/.is-ma/ups/mods/realtraffic.awk; }
+alias sa="sudo cat /var/log/nginx/ups_access.log | egrep -i"
+function sas () { sudo cat /var/log/nginx/ups_access.log | egrep -i "$1" | awk -f ~/.is-ma/ups/mods/realtraffic.awk; }
 alias sm="cat ~/.is-ma/ups/logs/minutero.log | egrep -i"
