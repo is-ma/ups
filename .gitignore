@@ -1,6 +1,2 @@
-!log/
-log/*
-!log/.placeholder
-!log/old/
-log/old/*
-!log/old/.placeholder
+*.log
+*.log-*
