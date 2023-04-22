@@ -1,16 +1,17 @@
 {
 # ups_access.log format
 request_method=$1
-scheme=$2
-host=$3
-request_uri=$4
-status=$5
-body_bytes_sent=$6
+request_uri=$2
+remote_addr=$3
+yyyymmdd=$4
+hhmmss=$5
+status=$6
 request_time=$7
-remote_addr=$8
-http_referer=$9
-http_user_agent=$10
-time_iso8601=$11
+body_bytes_sent=$8
+scheme=$9
+host=$10
+http_referer=$11
+http_user_agent=$12
 
 # sumarizing...
 if ($0 ~ /google\.com\/bot\.html/)     # ✓
