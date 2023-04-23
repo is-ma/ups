@@ -40,6 +40,10 @@ mainmenu () {
     sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f9 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "d" ]; then
     sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f10 | sort | uniq --count | sort -n
+  elif [ "$mainmenuinput" = "r" ]; then
+    sudo cat /var/log/nginx/ups_access.log | cut -d\| -f2 | sort | uniq --count | sort -n | tail -n100
+  elif [ "$mainmenuinput" = "a" ]; then
+    sudo cat /var/log/nginx/ups_access.log | cut -d\| -f3 | sort | uniq --count | sort -n | tail -n100
   elif [ "$mainmenuinput" = "q" ];then
     echo ""
     return 0
