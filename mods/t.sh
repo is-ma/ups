@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.is-ma/ups/mods/function.get_ip_plus.sh
 
 # Top NGINX ups_access.log stats
 mainmenu () {
@@ -27,7 +28,11 @@ mainmenu () {
   elif [ "$mainmenuinput" = "u" ]; then
     sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f2 | sort | uniq --count | sort -n | tail -n100
   elif [ "$mainmenuinput" = "i" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f3 | sort | uniq --count | sort -n | tail -n100
+    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f3 | sort | uniq --count | sort -n | tail -n100 | while read -r line; do
+      ip=$(echo $line | awk '{print $2}')
+      ip_plus=$(get_ip_plus $ip)
+      echo $line | sed "s/$ip/$ip_plus/"
+    done
   elif [ "$mainmenuinput" = "h" ]; then
     sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f4,5 | cut -c1-11 | uniq --count
   elif [ "$mainmenuinput" = "c" ]; then
