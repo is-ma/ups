@@ -1,5 +1,10 @@
 #!/bin/bash
+source ~/.is-ma/ups/mods/function.get_ups_access_log.sh
 source ~/.is-ma/ups/mods/function.get_ip_plus.sh
+
+# get appropiate ups_access.log
+ups_access_log=$(get_ups_access_log $1)
+echo $ups_access_log
 
 # Top NGINX ups_access.log stats
 mainmenu () {
@@ -24,31 +29,31 @@ mainmenu () {
   echo ""
   echo "------------------------------"
   if [ "$mainmenuinput" = "m" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f1 | sort | uniq --count | sort -n
+    sudo cat $ups_access_log | cut -d' ' -f1 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "u" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f2 | sort | uniq --count | sort -n | tail -n100
+    sudo cat $ups_access_log | cut -d' ' -f2 | sort | uniq --count | sort -n | tail -n100
   elif [ "$mainmenuinput" = "i" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f3 | sort | uniq --count | sort -n | tail -n100 | while read -r line; do
+    sudo cat $ups_access_log | cut -d' ' -f3 | sort | uniq --count | sort -n | tail -n100 | while read -r line; do
       ip=$(echo $line | awk '{print $2}')
       ip_plus=$(get_ip_plus $ip)
       echo $line | sed "s/$ip/$ip_plus/"
     done
   elif [ "$mainmenuinput" = "h" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f4,5 | cut -c1-11 | uniq --count
+    sudo cat $ups_access_log | cut -d' ' -f4,5 | cut -c1-11 | uniq --count
   elif [ "$mainmenuinput" = "c" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f6 | sort | uniq --count | sort -n
+    sudo cat $ups_access_log | cut -d' ' -f6 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "t" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f7 | sort -nr | uniq --count
+    sudo cat $ups_access_log | cut -d' ' -f7 | sort -nr | uniq --count
   elif [ "$mainmenuinput" = "b" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f8 | sort | uniq --count | sort -n
+    sudo cat $ups_access_log | cut -d' ' -f8 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "s" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f9 | sort | uniq --count | sort -n
+    sudo cat $ups_access_log | cut -d' ' -f9 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "d" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d' ' -f10 | sort | uniq --count | sort -n
+    sudo cat $ups_access_log | cut -d' ' -f10 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "r" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d\| -f2 | sort | uniq --count | sort -n | tail -n100
+    sudo cat $ups_access_log | cut -d\| -f2 | sort | uniq --count | sort -n | tail -n100
   elif [ "$mainmenuinput" = "a" ]; then
-    sudo cat /var/log/nginx/ups_access.log | cut -d\| -f3 | sort | uniq --count | sort -n | tail -n100
+    sudo cat $ups_access_log | cut -d\| -f3 | sort | uniq --count | sort -n | tail -n100
   elif [ "$mainmenuinput" = "q" ];then
     echo ""
     return 0
