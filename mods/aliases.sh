@@ -16,3 +16,4 @@ alias sa="sudo cat /var/log/nginx/ups_access.log | egrep -i"
 function sas () { sudo cat /var/log/nginx/ups_access.log | egrep -i "$1" | awk -f ~/.is-ma/ups/mods/realtraffic.awk; }
 alias sm="cat ~/.is-ma/ups/logs/minutero.log | egrep -i"
 alias t="~/.is-ma/ups/mods/t.sh"
+echo ""
