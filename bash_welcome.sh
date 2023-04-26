@@ -23,8 +23,8 @@ echo "Today top IP hits/min (from $IS_MA__UPS_PATH/logs/minutero.log):"
 grep $(date +"%Y%m%d") $IS_MA__UPS_PATH/logs/minutero.log | awk '{print $4,"--",$0}' | sort -nr | head -n3
 
 echo ""
-echo "Banned IPs (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
-tail -n3 $IS_MA__UPS_PATH/logs/banned_ips.log
+echo "Top banned IPs (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
+tail -n3 $IS_MA__UPS_PATH/logs/banned_ips.log | tac
 
 echo ""
 echo 'df -h | grep -E "Use%|vda1"'
