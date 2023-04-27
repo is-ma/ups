@@ -6,8 +6,11 @@ source /home/deploy/.is-ma/ups/config.sh
 # populate logs/raw_minutero.log && IP bags
 $IS_MA__UPS_PATH/mods/raw_minutero.sh
 
-# aggressive black IPs must be banned!
+# xploiters black IPs must be banned!
 $IS_MA__UPS_PATH/mods/ban_aggressive_ip.sh
+
+# aggressive xploiter IPs must be banned!
+$IS_MA__UPS_PATH/mods/ban_xploiter_ips.sh
 
 # improve the log to a better looking one
 $IS_MA__UPS_PATH/mods/minutero.sh

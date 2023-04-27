@@ -24,7 +24,7 @@ grep $(date +"%Y%m%d") $IS_MA__UPS_PATH/logs/minutero.log | awk '{print $4,"--",
 
 echo ""
 echo "Top banned IPs (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
-tail -n3 $IS_MA__UPS_PATH/logs/banned_ips.log | tac
+tail -n10 $IS_MA__UPS_PATH/logs/banned_ips.log | tac
 
 echo ""
 echo 'df -h | grep -E "Use%|vda1"'

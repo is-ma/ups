@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.is-ma/ups/config.sh
 source $IS_MA__UPS_PATH/mods/function.get_ip_plus.sh
 
 # - beautifyraw_minutero.log with minutero.log

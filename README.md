@@ -58,6 +58,5 @@ Add these lines to your ´~/.bashrc´:
 ```sh
 ### UFW POLICE & STATS (UPS) ###
 source ~/.is-ma/ups/bash_welcome.sh
-alias r="sudo tailf /var/log/nginx/access.log | awk -f ~/.is-ma/ups/mods/realtraffic.awk"
-alias m="tail -n60 ~/.is-ma/ups/logs/minutero.log"
+source ~/.is-ma/ups/mods/aliases.sh
 ```

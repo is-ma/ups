@@ -1,11 +1,10 @@
 #!/bin/bash
+source ~/.is-ma/ups/config.sh
+source $IS_MA__UPS_PATH/mods/function.save_ip_in_any_bag.sh
 
 # intro
 # - generates logs/raw_minutero.log
 # - populates IP white and black bags
-
-# include
-source $IS_MA__UPS_PATH/mods/function.save_ip_in_any_bag.sh
 
 # ups_access.log format
 # request_method=$1

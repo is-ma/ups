@@ -1,5 +1,5 @@
 #!/bin/bash
-source mods/function.get_ups_access_log.sh
+source ~/.is-ma/ups/mods/function.get_ups_access_log.sh
 
 # show aliases
 echo "### UFW POLICE & STATS (UPS) ### [aliases & utilities]"
