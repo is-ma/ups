@@ -8,7 +8,7 @@ export IS_MA__PUBLIC_TXT_FOR_TASKER=/home/deploy/rank_app/code/public/lastminute
 
 # offender xploit filters
 ending_in="/setup.txt |/setup.php |/eval\-stdin.php |/.env "
-having_exactly=" /wp\-login.php | /xmlrpc.php | /.git/config "
-starting_with=" /.aws/| /__phpmyadmin| /_phpmyadmin| /2phpmyadmin/| /actuator/| /administrator/| /admin/| /aws/| /dbadmin/| /db/| /debug/| /myadmin/| /mysql| /phpmy\-admin/| /phpmyadmin| /phppma/|/pma/| /program/| /shopdb/| /sites/| /sql/| /sqlmanager/| /wordpress/| /wp/| /wp\-admin/| /wp\-content/| /wp\-includes/| /test/| /uploads/"
+having_exactly=" /wp\-login.php | /xmlrpc.php "
+starting_with=" /.git/| /.aws/| /__phpmyadmin| /_phpmyadmin| /2phpmyadmin/| /actuator/| /administrator/| /admin/| /aws/| /dbadmin/| /db/| /debug/| /myadmin/| /mysql| /phpmy\-admin/| /phpmyadmin| /phppma/|/pma/| /program/| /shopdb/| /sites/| /sql/| /sqlmanager/| /wordpress/| /wp/| /wp\-admin/| /wp\-content/| /wp\-includes/| /test/| /uploads/"
 
 export IS_MA__XPLOIT_DIC="$ending_in|$having_exactly|$starting_with"
