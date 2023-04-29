@@ -33,4 +33,4 @@ ip_address=$(cat /tmp/top_ip_hits.txt | awk '{print $2}')
 save_ip_in_any_bag $ip_address
 
 # let's log!
-echo "$one_min_ago $hits $ip_hits $ip_address" >> $IS_MA__UPS_PATH/logs/raw_minutero.log
+echo "$one_min_ago:00 $hits $ip_hits $ip_address" >> $IS_MA__UPS_PATH/logs/raw_minutero.log

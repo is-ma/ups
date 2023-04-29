@@ -16,7 +16,7 @@ if grep -q "^$ip$" $IS_MA__UPS_PATH/logs/blacklist.log; then
 
     # ... well, fire!
     sudo ufw insert 1 deny from $ip to any > /dev/null 2>&1
-    echo "$now $hits $ip" >> $IS_MA__UPS_PATH/logs/banned_ips.log
+    echo "$now:00 $hits $ip" >> $IS_MA__UPS_PATH/logs/banned_ips.log
 
   fi
 fi
