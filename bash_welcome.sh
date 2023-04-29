@@ -19,10 +19,6 @@ abbrev_day=$(date '+%a')
 printf "%8d %6d %s %s\n" $hits $uniq_ip_count $today $abbrev_day
 
 echo ""
-echo "Today top IP hits/min (from $IS_MA__UPS_PATH/logs/minutero.log):"
-grep $(date +"%Y%m%d") $IS_MA__UPS_PATH/logs/minutero.log | awk '{print $4,"--",$0}' | sort -nr | head -n3
-
-echo ""
 echo "Top banned IPs (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
 tail -n10 $IS_MA__UPS_PATH/logs/banned_ips.log | tac
 
