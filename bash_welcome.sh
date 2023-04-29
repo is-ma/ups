@@ -19,8 +19,8 @@ abbrev_day=$(date '+%a')
 printf "%8d %6d %s %s\n" $hits $uniq_ip_count $today $abbrev_day
 
 echo ""
-echo "Top banned IPs (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
-tail -n10 $IS_MA__UPS_PATH/logs/banned_ips.log | tac
+echo "Last banned (from $IS_MA__UPS_PATH/logs/banned_ips.log):"
+tail -n10 $IS_MA__UPS_PATH/logs/banned_ips.log
 
 echo ""
 echo 'df -h | grep -E "Use%|vda1"'
