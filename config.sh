@@ -15,9 +15,9 @@ ending_in="\.asp "\
 "|\.jhtml "\
 "|\.jsa "\
 "|\.pl "\
+"|/eval\-stdin\.php "\
 "|/setup\.txt "\
-"|/setup\.php "\
-"|/eval\-stdin\.php "
+"|/setup\.php "
 having_exactly=" /wp\-login\.php "\
 "| /credentials "\
 "| /xmlrpc\.php "
