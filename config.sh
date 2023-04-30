@@ -15,6 +15,7 @@ ending_in="\.asp "\
 "|\.jhtml "\
 "|\.jsa "\
 "|\.pl "\
+"|\.swp "\
 "|/eval\-stdin\.php "\
 "|/setup\.txt "\
 "|/setup\.php "
