@@ -24,12 +24,14 @@ having_exactly=" /wp\-login\.php "\
 starting_with=" /\.git/"\
 "| /\.aws/"\
 "| /__phpmyadmin"\
+"| /_ignition"\
 "| /_phpmyadmin"\
 "| /2phpmyadmin/"\
 "| /actuator/"\
 "| /administrator/"\
 "| /admin/"\
 "| /api/"\
+"| /autodiscover/"\
 "| /aws/"\
 "| /boaform/"\
 "| /core/"\
@@ -58,6 +60,7 @@ starting_with=" /\.git/"\
 "| /wp\-content/"\
 "| /wp\-includes/"\
 "| /test/"\
-"| /uploads/"
+"| /uploads/"\
+"| /vendor/"
 
 export IS_MA__XPLOIT_DIC="$ending_in|$having_exactly|$starting_with"
