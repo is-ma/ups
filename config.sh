@@ -19,6 +19,7 @@ ending_in="\.asp "\
 "|/setup\.php "\
 "|/eval\-stdin\.php "
 having_exactly=" /wp\-login\.php "\
+"| /credentials "\
 "| /xmlrpc\.php "
 starting_with=" /\.git/"\
 "| /\.aws/"\
@@ -30,6 +31,7 @@ starting_with=" /\.git/"\
 "| /admin/"\
 "| /api/"\
 "| /aws/"\
+"| /boaform/"\
 "| /core/"\
 "| /dbadmin/"\
 "| /db/"\
@@ -40,6 +42,7 @@ starting_with=" /\.git/"\
 "| /phpmy\-admin/"\
 "| /phpmyadmin"\
 "| /phppma/"\
+"| /phpunit/"\
 "| /pma/"\
 "| /pools/"\
 "| /private/"\
