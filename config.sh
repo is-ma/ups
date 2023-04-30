@@ -38,7 +38,9 @@ starting_with=" /\.git/"\
 "| /dbadmin/"\
 "| /db/"\
 "| /debug/"\
+"| /geoserver/"\
 "| /laravel/"\
+"| /manager/"\
 "| /myadmin/"\
 "| /mysql"\
 "| /phpmy\-admin/"\
