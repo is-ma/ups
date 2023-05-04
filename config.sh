@@ -9,11 +9,17 @@ export IS_MA__PUBLIC_TXT_FOR_TASKER=/home/deploy/rank_app/code/public/lastminute
 # offender xploit filters
 ending_in="\.asp "\
 "|\.aspx "\
+"|\.bak "\
+"|\.bk "\
+"|\.backup "\
 "|\.cgi "\
 "|\.dll "\
 "|\.env "\
+"|\.envrc "\
+"|\.ini "\
 "|\.jhtml "\
 "|\.jsa "\
+"|\.php "\
 "|\.pl "\
 "|\.swp "\
 "|/eval\-stdin\.php "\
