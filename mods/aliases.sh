@@ -25,6 +25,7 @@ echo "'as' [DATE]: https           | scheme"
 echo "'ad' [DATE]: mydomain.com    | host"
 echo "'ar' [DATE]: '-'             | http_referer"
 echo "'aa' [DATE]: 'Mozilla/5.0'   | http_user_agent"
+echo ""
 
 # define aliases
 alias b="tail -n60 ~/.is-ma/ups/logs/banned_ips.log"
@@ -41,3 +42,4 @@ alias au="~/.is-ma/ups/mods/au.sh"
 alias ai="~/.is-ma/ups/mods/ai.sh"
 alias ah="~/.is-ma/ups/mods/ah.sh"
 alias ac="~/.is-ma/ups/mods/ac.sh"
+alias at="~/.is-ma/ups/mods/at.sh"
