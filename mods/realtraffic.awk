@@ -32,6 +32,8 @@ else if ($0 ~ /GrapeshotCrawler/)      # Goo ad partner
   print status, request_time, "Grape", request_uri
 else if ($0 ~ /googleusercontent\.com/)# Goo related
   print status, request_time, "GoUC", request_uri
+else if ($0 ~ /googlezip\.net/)        # Goo related
+  print status, request_time, "GZip", request_uri
 else if ($0 ~ /criteo\.com/)           # Bing partner
   print status, request_time, "Crit", request_uri
 else if ($0 ~ /apple\.com/)            # inoffensive

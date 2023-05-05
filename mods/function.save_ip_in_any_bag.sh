@@ -18,6 +18,7 @@ save_ip_in_any_bag () {
   crawler_dns+=("baidu.jp.")
   crawler_dns+=("msn.com.")
   crawler_dns+=("google.com.")
+  crawler_dns+=("googlezip.net.")
   crawler_dns+=("googlebot.com.")
   crawler_dns+=("yahoo.net.")
   crawler_dns+=("yandex.ru.")
