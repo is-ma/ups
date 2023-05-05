@@ -38,3 +38,4 @@ alias t="~/.is-ma/ups/mods/t.sh"
 
 alias am="~/.is-ma/ups/mods/am.sh"
 alias au="~/.is-ma/ups/mods/au.sh"
+alias ai="~/.is-ma/ups/mods/ai.sh"
