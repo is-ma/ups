@@ -30,6 +30,7 @@ mainmenu () {
   clear
   echo ""
   echo "------------------------------"
+
   if [ "$mainmenuinput" = "m" ]; then
     sudo cat $ups_access_log | cut -d' ' -f1 | sort | uniq --count | sort -n
   elif [ "$mainmenuinput" = "u" ]; then
