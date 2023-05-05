@@ -58,5 +58,4 @@ Add these lines to your ´~/.bashrc´:
 ```sh
 ### UFW POLICE & STATS (UPS) ###
 source ~/.is-ma/ups/bash_welcome.sh
-source ~/.is-ma/ups/mods/aliases.sh
 ```
