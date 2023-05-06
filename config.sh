@@ -22,6 +22,7 @@ ending_in="\.asp "\
 "|\.php "\
 "|\.pl "\
 "|\.swp "\
+"|\.sql "\
 "|/eval\-stdin\.php "\
 "|/setup\.txt "\
 "|/setup\.php "
