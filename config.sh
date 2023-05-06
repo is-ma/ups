@@ -7,22 +7,28 @@ export IS_MA__MAX_REQ_MIN=100
 export IS_MA__PUBLIC_TXT_FOR_TASKER=/home/deploy/rank_app/code/public/lastminuteplus.txt
 
 # offender xploit filters
-ending_in="\.asp "\
+ending_in="\.7z "\
+"|\.asp "\
 "|\.aspx "\
 "|\.bak "\
-"|\.bk "\
 "|\.backup "\
+"|\.bk "\
+"|\.bz2 "\
 "|\.cgi "\
 "|\.dll "\
 "|\.env "\
 "|\.envrc "\
 "|\.ini "\
 "|\.jhtml "\
+"|\.jar "\
 "|\.jsa "\
 "|\.php "\
 "|\.pl "\
 "|\.swp "\
 "|\.sql "\
+"|\.tar "\
+"|\.war "\
+"|\.zip "\
 "|/eval\-stdin\.php "\
 "|/setup\.txt "\
 "|/setup\.php "
@@ -43,6 +49,7 @@ starting_with=" /\.git/"\
 "| /aws/"\
 "| /boaform/"\
 "| /core/"\
+"| /data/"\
 "| /dbadmin/"\
 "| /db/"\
 "| /debug/"\
