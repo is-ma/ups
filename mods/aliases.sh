@@ -10,7 +10,6 @@ echo "    sm: Search logs/minutero.log (usually IPs or time range)."
 echo "    sa SEARCH [DATE] : Raw search Nginx log."
 echo "   sac SEARCH [DATE] : Compact search Nginx log."
 echo "   sah SEARCH [DATE] : Histogram URL view of an Nginx log search."
-echo "     t SEARCH [DATE] : Top NGINX log stats."
 echo ""
 echo "Top NGINX ups_access.log stats"
 echo "------------------------------"
@@ -35,7 +34,6 @@ alias sm="cat ~/.is-ma/ups/logs/minutero.log | egrep -i"
 function sa () { sudo cat $(get_ups_access_log $2) | egrep -i "$1"; }
 function sac () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk -f ~/.is-ma/ups/mods/realtraffic.awk; }
 function sah () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $2}' | sort | uniq --count | sort -n | tail -n100; }
-alias t="~/.is-ma/ups/mods/t.sh"
 
 alias am="~/.is-ma/ups/mods/am.sh"
 alias au="~/.is-ma/ups/mods/au.sh"
