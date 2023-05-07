@@ -7,34 +7,6 @@ export IS_MA__MAX_REQ_MIN=90
 export IS_MA__PUBLIC_TXT_FOR_TASKER=/home/deploy/rank_app/code/public/lastminuteplus.txt
 
 # offender xploit filters
-ending_in="\.7z "\
-"|\.asp "\
-"|\.aspx "\
-"|\.bak "\
-"|\.backup "\
-"|\.bk "\
-"|\.bz2 "\
-"|\.cgi "\
-"|\.dll "\
-"|\.env "\
-"|\.envrc "\
-"|\.ini "\
-"|\.jhtml "\
-"|\.jar "\
-"|\.jsa "\
-"|\.php "\
-"|\.pl "\
-"|\.swp "\
-"|\.sql "\
-"|\.tar "\
-"|\.war "\
-"|\.zip "\
-"|/eval\-stdin\.php "\
-"|/setup\.txt "\
-"|/setup\.php "
-having_exactly=" /wp\-login\.php "\
-"| /credentials "\
-"| /xmlrpc\.php "
 starting_with=" /\.git/"\
 "| /\.aws/"\
 "| /__phpmyadmin"\
@@ -49,6 +21,7 @@ starting_with=" /\.git/"\
 "| /aws/"\
 "| /boaform/"\
 "| /core/"\
+"| /credentials"\
 "| /data/"\
 "| /dbadmin/"\
 "| /db/"\
@@ -71,13 +44,37 @@ starting_with=" /\.git/"\
 "| /sql/"\
 "| /sqlmanager/"\
 "| /system/"\
+"| /test/"\
+"| /uploads/"\
+"| /vendor/"\
 "| /wordpress/"\
 "| /wp/"\
 "| /wp\-admin/"\
 "| /wp\-content/"\
-"| /wp\-includes/"\
-"| /test/"\
-"| /uploads/"\
-"| /vendor/"
+"| /wp\-includes/"
 
-export IS_MA__XPLOIT_DIC="$ending_in|$having_exactly|$starting_with"
+ending_in="\.7z "\
+"|\.asp "\
+"|\.aspx "\
+"|\.bak "\
+"|\.backup "\
+"|\.bk "\
+"|\.bz2 "\
+"|\.cgi "\
+"|\.dll "\
+"|\.env "\
+"|\.envrc "\
+"|\.ini "\
+"|\.jhtml "\
+"|\.jar "\
+"|\.jsa "\
+"|\.php "\
+"|\.pl "\
+"|\.swp "\
+"|\.sql "\
+"|\.tar "\
+"|\.war "\
+"|\.zip "\
+"|/setup\.txt "
+
+export IS_MA__XPLOIT_DIC="$starting_with|$ending_in"
