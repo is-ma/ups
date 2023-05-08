@@ -31,4 +31,4 @@ ip_address=$(cat /tmp/top_ip_hits.txt | awk '{print $2}')
 
 # let's log!
 ipplus=$(iptoplus $ip_address)
-printf "%s:00 %s %5d %4d  %s %s\n" $one_min_ago $hits $ip_hits $ipplus >> $IS_MA__UPS_PATH/logs/minutero.log
+printf "%s %s:00 %5d %4d  %s %s\n" $one_min_ago $hits $ip_hits $ipplus >> $IS_MA__UPS_PATH/logs/minutero.log
