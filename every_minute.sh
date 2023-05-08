@@ -3,8 +3,8 @@
 # read configuration file
 source /home/deploy/.is-ma/ups/config.sh
 
-# populate logs/raw_minutero.log && IP bags
-$IS_MA__UPS_PATH/mods/raw_minutero.sh
+# populate minutero.log (and /ipplus/ip_dom.log)
+$IS_MA__UPS_PATH/mods/minutero.sh
 
 # aggressive blacklisted crawlers must be banned!
 $IS_MA__UPS_PATH/mods/ban_aggressive_ip.sh
