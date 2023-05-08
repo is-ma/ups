@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.is-ma/ups/config.sh
-source $IS_MA__UPS_PATH/mods/function.save_ip_in_any_bag.sh
+source $IS_MA__UPS_PATH/mods/ipplus/function.iptoplus.sh
 
 # intro
 # - generates logs/raw_minutero.log
@@ -29,8 +29,6 @@ sudo tail -n2000 $IS_MA__WEBLOG_PATH | grep "$one_min_ago" | awk '{print $3}' | 
 ip_hits=$(cat /tmp/top_ip_hits.txt | awk '{print $1}')
 ip_address=$(cat /tmp/top_ip_hits.txt | awk '{print $2}')
 
-# new function: save ip in any bag
-save_ip_in_any_bag $ip_address
-
 # let's log!
-echo "$one_min_ago:00 $hits $ip_hits $ip_address" >> $IS_MA__UPS_PATH/logs/raw_minutero.log
+ipplus=$(iptoplus $ip_address)
+printf "%s:00 %s %5d %4d  %s %s\n" $one_min_ago $hits $ip_hits $ipplus >> $IS_MA__UPS_PATH/logs/minutero.log
