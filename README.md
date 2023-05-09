@@ -19,10 +19,7 @@ git clone https://github.com/is-ma/ups.git ~/.is-ma/ups
 Create the log files:
 
 ```sh
-touch ~/.is-ma/ups/logs/raw_minutero.log
 touch ~/.is-ma/ups/logs/minutero.log
-touch ~/.is-ma/ups/logs/blacklist.log
-touch ~/.is-ma/ups/logs/whitelist.log
 touch ~/.is-ma/ups/logs/banned_ips.log
 touch ~/.is-ma/ups/logs/daily.log
 ```
