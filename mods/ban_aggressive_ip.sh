@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.is-ma/ups/config.sh
 
 # intro
 # - this module will ban aggressive (many hits) black IPs
