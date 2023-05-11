@@ -32,7 +32,7 @@ sudo tail -n2000 $IS_MA__WEBLOG_PATH | grep "$one_min_ago" | awk '{print $3}' | 
         echo "$one_min_ago:00 $ip $hits #WhitelistedNotBanned" >> $IS_MA__UPS_PATH/logs/banned_ips.log
       else
         # unfriendly: log & ban -> 20230509 11:39:05 /wp-login.php 87.116.133.201
-        echo "$one_min_ago:00 $ip $hits" >> $IS_MA__UPS_PATH/logs/banned_ips.log
+        echo "$one_min_ago:00 $ip [$dnsdomain, $hits]" >> $IS_MA__UPS_PATH/logs/banned_ips.log
         sudo ufw insert 1 deny from $ip to any > /dev/null 2>&1
       fi
 
