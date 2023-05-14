@@ -10,7 +10,7 @@ source $IS_MA__UPS_PATH/mods/ipplus/function.iptoplus.sh
 
 one_min_ago=$(date --date='1 minute ago' '+%Y%m%d %H:%M')
 # if IP behaves aggressively a minute ago
-sudo tail -n2000 $IS_MA__WEBLOG_PATH | grep "$one_min_ago" | awk '{print $4,$5,$3,$2}' | egrep -i "$IS_MA__XPLOIT_DIC" | while read -r line; do
+sudo tail -n2000 $IS_MA__WEBLOG_PATH | grep "$one_min_ago" | egrep -i "$IS_MA__XPLOIT_DIC" | awk '{print $4,$5,$3,$2}' | while read -r line; do
 
   # get ip from $line '20230509 16:04:59 66.249.66.38 /1661200-antonela'
   ip=$(echo $line | awk '{print $3}')
