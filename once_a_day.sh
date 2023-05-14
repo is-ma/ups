@@ -2,15 +2,15 @@
 
 # read configuration file
 source /home/deploy/.is-ma/ups/config.sh
+source $IS_MA__UPS_PATH/mods/function.get_ups_access_log.sh
 
-# date variables
-today=$(date '+%d/%b/%Y')  # executes from logrotate before 00:00
-#yesterday=$(date --date='1 day ago' '+%d/%b/%Y')  # executes from logrotate at 00:00
-abbrev_day=$(date --date='1 day ago' '+%a')
+yesterday=$(date --date='1 day ago' '+%Y%m%d') #yyyymmdd
+IS_MA__UPS_ACCESS_LOG=$(get_ups_access_log $yesterday)
 
 # other variables
-total_hits=$(sudo cat $IS_MA__WEBLOG_PATH | wc -l)
-uniq_ip_count=$(sudo cat $IS_MA__WEBLOG_PATH | awk '{print $3}' | sort -nu | wc -l)
+friendly_yesterday=$(date --date='1 day ago' '+%d/%b/%Y %a')
+total_hits=$(sudo cat $IS_MA__UPS_ACCESS_LOG | wc -l)
+uniq_ip_count=$(sudo cat $IS_MA__UPS_ACCESS_LOG | awk '{print $3}' | sort -nu | wc -l)
 
 # add a new record to $IS_MA__UPS_PATH/logs/daily.log
-printf "%8d %6d %s %s\n" $total_hits $uniq_ip_count $yesterday $abbrev_day >> $IS_MA__UPS_PATH/logs/daily.log
+printf "%8d %6d %s %s\n" $total_hits $uniq_ip_count $friendly_yesterday >> $IS_MA__UPS_PATH/logs/daily.log

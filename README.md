@@ -24,12 +24,12 @@ touch ~/.is-ma/ups/logs/banned_ips.log
 touch ~/.is-ma/ups/logs/daily.log
 ```
   
-Then add these rules to your "crontab -e":
+Then add these rules to your "crontab -e" (`ce`):
 
 ```sh
 ### UPS: tic toc tic toc ###
 * * * * * /home/deploy/.is-ma/ups/every_minute.sh
-59 23 * * * /home/deploy/.is-ma/ups/once_a_day.sh
+8 0 * * * /home/deploy/.is-ma/ups/once_a_day.sh
 ```
 
 
