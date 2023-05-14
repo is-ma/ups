@@ -31,6 +31,7 @@ starting_with=" /\.git/"\
 "| /manager/"\
 "| /myadmin/"\
 "| /mysql"\
+"| /owa/"\
 "| /phpmy\-admin/"\
 "| /phpmyadmin"\
 "| /phppma/"\
@@ -39,6 +40,7 @@ starting_with=" /\.git/"\
 "| /pools/"\
 "| /private/"\
 "| /program/"\
+"| /shell"\
 "| /shopdb/"\
 "| /sites/"\
 "| /sql/"\
@@ -61,20 +63,54 @@ ending_in="\.7z "\
 "|\.bk "\
 "|\.bz2 "\
 "|\.cgi "\
+"|\.dev "\
+"|\.dist "\
 "|\.dll "\
 "|\.env "\
 "|\.envrc "\
+"|\.example "\
 "|\.ini "\
 "|\.jhtml "\
 "|\.jar "\
 "|\.jsa "\
+"|\.json "\
+"|\.local "\
+"|\.orig "\
 "|\.php "\
 "|\.pl "\
+"|\.prod "\
+"|\.save "\
+"|\.stage "\
 "|\.swp "\
 "|\.sql "\
 "|\.tar "\
 "|\.war "\
+"|\.yaml "\
+"|\.yml "\
 "|\.zip "\
 "|/setup\.txt "
 
 export IS_MA__XPLOIT_DIC="$starting_with|$ending_in"
+
+# define startings and endings: remove spaces and escape (.) & (-)
+startings=$(echo $starting_with | tr -d ' ' | sed 's/\./\\./g' | sed 's/\-/\\-/g' | xargs -I {} echo "^("{}")")
+endings=$(echo $ending_in | tr -d ' ' | sed 's/\./\\./g' | sed 's/\-/\\-/g' | xargs -I {} echo "("{}")$")
+
+# write the firewall!
+tee /home/deploy/nginx_firewall.auto <<EOF >/dev/null
+
+  # note1: these automatic rules comes from ups/config.sh
+  # note2: sudo nginx -s reload
+
+  # startings
+  location ~ $startings {
+    default_type text/plain;
+    return 444 "You will be banned soon!\n";
+  }
+
+  # endings
+  location ~ $endings {
+    default_type text/plain;
+    return 444 "You will be banned soon!\n";
+  }
+EOF
