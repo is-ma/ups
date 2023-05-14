@@ -88,7 +88,8 @@ ending_in="\.7z "\
 "|\.yaml "\
 "|\.yml "\
 "|\.zip "\
-"|/setup\.txt "
+"|/setup\.txt "\
+"|/wlwmanifest\.xml "
 
 export IS_MA__XPLOIT_DIC="$starting_with|$ending_in"
 
