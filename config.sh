@@ -26,6 +26,7 @@ starting_with=" /\.git/"\
 "| /dbadmin/"\
 "| /db/"\
 "| /debug/"\
+"| /dns\-query"\
 "| /geoserver/"\
 "| /laravel/"\
 "| /manager/"\
