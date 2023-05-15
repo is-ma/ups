@@ -1,5 +1,6 @@
 #!/bin/bash
 source ~/.is-ma/ups/mods/function.get_ups_access_log.sh
+source ~/.is-ma/ups/mods/ipplus/function.iptoplus.sh
 
 # show aliases
 echo "### UFW POLICE & STATS (UPS) ### [aliases & utilities]"
@@ -9,7 +10,9 @@ echo "     m: Tail last 60 rows on logs/minutero.log."
 echo "    sm: Search logs/minutero.log (usually IPs or time range)."
 echo "    sa SEARCH [DATE] : Raw search Nginx log."
 echo "   sac SEARCH [DATE] : Compact search Nginx log."
-echo "   sah SEARCH [DATE] : Histogram URL view of an Nginx log search."
+echo "   sah SEARCH [DATE] : Histogram URL viewer."
+echo "   sax SEARCH [DATE] : Find cross reference URLs."
+echo "   sai SEARCH [DATE] : Find IPs Plus linked to search."
 echo ""
 echo "Top NGINX ups_access.log stats"
 echo "------------------------------"
@@ -34,6 +37,8 @@ alias sm="cat ~/.is-ma/ups/logs/minutero.log | egrep -i"
 function sa () { sudo cat $(get_ups_access_log $2) | egrep -i "$1"; }
 function sac () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk -f ~/.is-ma/ups/mods/realtraffic.awk; }
 function sah () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $2}' | sort | uniq --count | sort -n | tail -n100; }
+function sax () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $3}' | sort -u | while read -r line; do sah $line; done; }
+function sai () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $3}' | sort -u | while read -r line; do iptoplus $line; done; }
 
 alias hm="~/.is-ma/ups/mods/hm.sh"
 alias hu="~/.is-ma/ups/mods/hu.sh"
