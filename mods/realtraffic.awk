@@ -38,6 +38,8 @@ else if ($0 ~ /criteo\.com/)           # Bing partner
   print status, request_time, "Crit", request_uri
 else if ($0 ~ /apple\.com/)            # inoffensive
   print status, request_time, "Appl", request_uri
+else if ($0 ~ /Amazonbot/)            # inoffensive
+  print status, request_time, "Amzn", request_uri
 else if ($0 ~ /uptimerobot\.com/)      # guardian app
   print status, request_time, "Upti", request_uri
 else if ($0 ~ /Tasker/)                # android info min by min
