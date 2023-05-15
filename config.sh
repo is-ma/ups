@@ -50,6 +50,7 @@ starting_with=" //"\
 "| /system/"\
 "| /test/"\
 "| /uploads/"\
+"| /user/"\
 "| /vendor/"\
 "| /wordpress/"\
 "| /wp/"\
