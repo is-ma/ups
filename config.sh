@@ -88,6 +88,7 @@ ending_in="\.7z "\
 "|\.yaml "\
 "|\.yml "\
 "|\.zip "\
+"|/security\.txt "\
 "|/setup\.txt "\
 "|/wlwmanifest\.xml "
 
