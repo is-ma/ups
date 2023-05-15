@@ -13,6 +13,7 @@ echo "   sac SEARCH [DATE] : Compact search Nginx log."
 echo "   sah SEARCH [DATE] : Histogram URL viewer."
 echo "   sax SEARCH [DATE] : Find cross reference URLs."
 echo "   sai SEARCH [DATE] : Find IPs Plus linked to a search."
+echo "   sat SEARCH [DATE] : Find HH:MM histogram."
 echo ""
 echo "Top NGINX ups_access.log stats"
 echo "------------------------------"
@@ -39,6 +40,7 @@ function sac () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk -f ~/.
 function sah () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $2}' | sort | uniq --count | sort -n | tail -n100; }
 function sax () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $3}' | sort -u | while read -r line; do sah $line; done; }
 function sai () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $3}' | sort -u | while read -r line; do iptoplus $line; done; }
+function sat () { sudo cat $(get_ups_access_log $2) | egrep -i "$1" | awk '{print $4,$5}' | cut -c9-14 | uniq --count; }
 
 alias hm="~/.is-ma/ups/mods/hm.sh"
 alias hu="~/.is-ma/ups/mods/hu.sh"
