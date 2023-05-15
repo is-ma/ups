@@ -81,6 +81,7 @@ ending_in="\.7z "\
 "|\.php "\
 "|\.pl "\
 "|\.prod "\
+"|\.py "\
 "|\.save "\
 "|\.stage "\
 "|\.swp "\
