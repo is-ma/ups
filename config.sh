@@ -7,7 +7,7 @@ export IS_MA__MAX_REQ_MIN=90
 export IS_MA__PUBLIC_TXT_FOR_TASKER=/home/deploy/rank_app/code/public/lastminuteplus.txt
 
 # offender xploit filters
-starting_with=" /\/\/"\
+starting_with=" //"\
 "| /\.git/"\
 "| /\.aws/"\
 "| /__phpmyadmin"\
