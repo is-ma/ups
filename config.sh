@@ -103,8 +103,7 @@ startings=$(echo $starting_with | tr -d ' ' | sed 's/\./\\./g' | sed 's/\-/\\-/g
 endings=$(echo $ending_in | tr -d ' ' | sed 's/\./\\./g' | sed 's/\-/\\-/g' | xargs -I {} echo "("{}")$")
 
 # write the firewall!
-tee /home/deploy/nginx_firewall.auto <<EOF >/dev/null
-
+cat << EOF > /home/deploy/nginx_firewall.auto
   # note1: these automatic rules comes from ups/config.sh
   # note2: sudo nginx -s reload
 
