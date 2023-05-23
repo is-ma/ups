@@ -9,7 +9,7 @@ today=$(date '+%Y%m%d') #yyyymmdd
 IS_MA__UPS_ACCESS_LOG=$(get_ups_access_log $today)
 
 # other variables
-friendly_yesterday=$(date --date='1 day ago' '+%d/%b/%Y %a')
+friendly_yesterday=$(date --date="$today -1 days" '+%d/%b/%Y %a')
 total_hits=$(sudo cat $IS_MA__UPS_ACCESS_LOG | wc -l)
 uniq_ip_count=$(sudo cat $IS_MA__UPS_ACCESS_LOG | awk '{print $3}' | sort -nu | wc -l)
 
