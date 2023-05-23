@@ -4,8 +4,9 @@
 source /home/deploy/.is-ma/ups/config.sh
 source $IS_MA__UPS_PATH/mods/function.get_ups_access_log.sh
 
-yesterday=$(date --date='1 day ago' '+%Y%m%d') #yyyymmdd
-IS_MA__UPS_ACCESS_LOG=$(get_ups_access_log $yesterday)
+# get yesterday's access log
+today=$(date '+%Y%m%d') #yyyymmdd
+IS_MA__UPS_ACCESS_LOG=$(get_ups_access_log $today)
 
 # other variables
 friendly_yesterday=$(date --date='1 day ago' '+%d/%b/%Y %a')
