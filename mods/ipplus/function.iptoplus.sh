@@ -1,7 +1,7 @@
 #!/bin/bash
 source /home/deploy/.is-ma/ups/config.sh
 
-# Get 'ip_plus' (otherwise 'ip')
+# Get «ip plus» (otherwise 'ip')
 iptoplus () {
   # human friendly parameter
   ip=$1
