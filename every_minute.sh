@@ -13,4 +13,4 @@ $IS_MA__UPS_PATH/mods/ban_aggressive_ip.sh
 $IS_MA__UPS_PATH/mods/ban_xploiter_ips.sh
 
 # show stats on Tasker (mobile device)
-tail $IS_MA__UPS_PATH/logs/minutero.log | awk '{print $2,$3,"hits [" $4 ", " $NF "]"}' | tac > $IS_MA__PUBLIC_TXT_FOR_TASKER
+$IS_MA__UPS_PATH/mods/tasker.sh
