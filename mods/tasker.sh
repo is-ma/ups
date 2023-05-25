@@ -12,5 +12,5 @@ domain_histogram=$(saipd "$search_min_ago" | tac)
 total_count=$(echo "$domain_histogram" | sumcol 1)
 
 # lest's print it!
-echo "$total_count TOTAL [${min_ago}h]" > $IS_MA__PUBLIC_TXT_FOR_TASKER
+echo "TOTAL $total_count [${min_ago}h]" > $IS_MA__PUBLIC_TXT_FOR_TASKER
 echo "$domain_histogram" >> $IS_MA__PUBLIC_TXT_FOR_TASKER
