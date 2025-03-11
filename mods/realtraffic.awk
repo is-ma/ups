@@ -46,7 +46,7 @@ else if ($0 ~ /uptimerobot\.com/)      # guardian app
   print status, request_time, "Upti", request_uri
 else if ($0 ~ /facebook\.com/) 
   print status, request_time, "Face", request_uri
-else if ($0 ~ /openai\.com\/bot/) 
+else if ($0 ~ /openai\.com\//) 
   print status, request_time, "OpAI", request_uri
 else if ($0 ~ /Tasker/)                # android info min by min
   print status, request_time, "Tskr", request_uri
